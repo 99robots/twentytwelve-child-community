@@ -1,0 +1,40 @@
+**Footer WIdget Left**
+Widget Title: 
+Join In
+
+
+<p>Get involved<p>
+<p><a href="http://testarea01.wpengine.com/volunteer/" class="button">- Volunteer -</a></p>
+
+
+
+
+**Footer WIdget Center**
+Widget Title: 
+Connect With Us
+
+Code:
+
+
+<div class="box">
+	<p>Sign up for our Newsletter/Events</p>
+
+	<form target="_blank" class="validate" name="mc-embedded-subscribe-form" id="mc-embedded-subscribe-form" method="post" action="http://greenwichlibrary.us4.list-manage.com/subscribe/post?u=295857487948b08b06939294b&amp;id=b02d7fcf02">
+		<p><input type="email" required="" placeholder="email address" id="mce-EMAIL" class="email" name="EMAIL" value="">
+		<input type="submit" class="button" id="mc-embedded-subscribe" name="subscribe" value="GO"></p>
+	</form>
+
+	<a title="View our RSS Feed" href="http://www.communityanswers.org/events/feed/"><img class="social-icon social-icon-rss" alt="View our RSS Feed" src="http://www.communityanswers.org/wp-content/themes/listings/functions/images/ico-social-rss.png"></a>
+	
+	<a title="View our Facebook Page" href="http://www.facebook.com/pages/Community-Answers-Inc/190736194392001"><img class="social-icon social-icon-facebook" alt="View our Facebook Page" src="http://www.communityanswers.org/wp-content/themes/listings/functions/images/ico-social-facebook.png"></a>
+
+</div> <!-- /box --> 
+
+
+
+**Footer WIdget Right**
+Widget Title: 
+Funding
+
+This site is generously funded by a grant from Greenwich United Way and Community Support. 
+<p><a href="http://testarea01.wpengine.com/donate/" class="button">- Donate -</a></p>
