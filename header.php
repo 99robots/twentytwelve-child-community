@@ -41,7 +41,7 @@
 
 
 	<header id="masthead" class="site-header" role="banner">
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img class="logo" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/logo-CA-2-300x120.png"></a>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img class="logo" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/logo-CA-2-300x127.png"></a>
 <!--
 		<hgroup>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -62,7 +62,7 @@
 		<?php endif; ?>
 	</header><!-- #masthead -->
 
-	
+
 	<!-- get the search and links section -->
 	<?php if ( is_singular( array( 'tribe_events', 'tribe_venue' ) ) ) {
 		//do nothing
@@ -71,9 +71,9 @@
 	} ?>
 
 	<div id="main" class="wrapper">
-	
+
 <!--
 		<div id="sub-header">
-			<?php get_search_form(); ?>			
+			<?php get_search_form(); ?>
 		</div>
 -->

@@ -18,12 +18,12 @@ get_header(); ?>
 
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
-		
+
 		<?php get_template_part( 'content', 'home-orgcats' ); ?>
 
 		<!-- Reference: http://www.advancedcustomfields.com/resources/how-to/how-to-query-posts-filtered-by-custom-field-values/ -->
-		<?php 
-				 
+		<?php
+
 			// args
 			$args = array(
 				'posts_per_page' => 4,
@@ -32,13 +32,13 @@ get_header(); ?>
 				//'meta_key' => 'frontpagepost',
 				//'meta_value' => '1'
 			);
-		 
+
 		// get results
 		$the_query = new WP_Query( $args );
-		 
+
 		// The Loop
 		?>
-		
+
 		<?php if( $the_query->have_posts() ): ?>
 
 			<div class="featuredpost-container">
@@ -59,9 +59,9 @@ get_header(); ?>
 					</div>
 				<?php endwhile; ?>
 			</div>
-						
+
 		<?php endif; ?>
-		 
+
 		<?php wp_reset_query();  // Restore global post data stomped by the_post(). ?>
 
 		</div><!-- #content -->
