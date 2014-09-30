@@ -1,7 +1,9 @@
+<!--
 <div class="category-listings-heading">
-<p>Who? What? Where? When? in Greenwich, CT</p>
-<p>Everything you need to know, regularly updated & free!</p>
+	<p>Who? What? Where? When? in Greenwich, CT</p>
+	<p>Everything you need to know, regularly updated & free!</p>
 </div>
+-->
 
 <div class="category-listings">
     	<h2>Organization Categories</h2>

@@ -171,26 +171,89 @@ function siq_create_organization_category() {
 // 5. Remove the regular Posts from wp admin
 // Reference; http://codex.wordpress.org/Function_Reference/remove_menu_page
 
-function stratiq_remove_menus(){
+function siq_remove_menus(){
  remove_menu_page( 'edit.php' );                   //Posts
 }
-add_action( 'admin_menu', 'stratiq_remove_menus' );
+add_action( 'admin_menu', 'siq_remove_menus' );
 
 // 6. Apply post filters for the search form
 //    a) Exclude old event posts
+//    b) Exclude recrurring events
 
-add_action('pre_get_posts', 'siq_search_filter');
-function siq_search_filter($query) {
-	if ( !is_admin() && $query->is_main_query() ) {
-		if ($query->is_search) {
-			$query->set('meta_query', array(
-				array(
-					'key'     => '_EventEndDate',
-					'value'   => date('Y-m-d'),
-					'type'	  => 'DATE',
-					'compare' => '>=',
-				)
-			));
+
+add_filter('relevanssi_hits_filter', 'siq_custom_search');
+function siq_custom_search($hits) {
+
+	if (isset($hits[0]) && is_array($hits[0]) && count($hits[0]) > 0) {
+
+		// a) Exclude old event posts
+
+		$now = time();
+
+		$count = 0;
+
+		foreach ($hits[0] as $hit) {
+
+			if ($hit->post_type == 'tribe_events') {
+
+				if (strtotime(get_post_meta($hit->ID,'_EventEndDate', true)) < $now) {
+					unset($hits[0][$count]);
+				}
+			}
+			$count++;
 		}
+
+		// b) Exclude recrurring events
+
+		$count = 0;
+		$post_parent = array();
+		$ok = array();
+
+		foreach ($hits[0] as $hit) {
+
+			if ($hit->post_type == 'tribe_events') {
+
+				// Remove all results if end date is before now
+
+				if ($hit->post_parent == 0) {
+					$id = $hit->ID;
+				} else {
+					$id = $hit->post_parent;
+				}
+
+				if (!in_array($id, $post_parent)) {
+					$ok[] = $hit;
+				}
+
+				if ($hit->post_parent != 0 && !in_array($hit->post_parent, $post_parent)) {
+					$post_parent[] = $hit->post_parent;
+				}
+			} else {
+				$ok[] = $hit;
+			}
+			$count++;
+		}
+
+		$hits[0] = $ok;
 	}
+
+	return $hits;
 }
+
+// 7 Show all tag archives
+
+function siq_tag_archives( $query ) {
+    if ( $query->is_tag() && $query->is_main_query() ) {
+        $query->set( 'post_type', array( 'organization' ) );
+    }
+}
+add_action( 'pre_get_posts', 'siq_tag_archives' );
+
+
+// 8 Read More link  - Make the "read more" link to the post  (found in search results)
+// Reference: http://codex.wordpress.org/Function_Reference/the_excerpt
+
+function new_excerpt_more( $more ) {
+	return '[.....]';
+}
+add_filter('excerpt_more', 'new_excerpt_more');

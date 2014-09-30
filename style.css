@@ -11,7 +11,7 @@ Version: 1.0.0
 
 /* CA COLOR PALETTE
 
-#BD1306
+#BD1306 - red
 
 */
 
@@ -36,13 +36,16 @@ body {
 
 a {text-decoration:none;}
 p {
-    line-height: 1.71429;
-    margin: 0 0 1.71429rem;
+    line-height: 1.2;
+    margin: 0 0 1.2rem;
 }
+.entry-content p, .entry-summary p, .comment-content p, .mu_register p {line-height: 1.4rem;margin: 0 0 1.0rem;}
+
+.wrapper:after {margin-bottom: 10px; overflow: hidden;}
 
 /* site title */
 .site-header h1 a {
-    font-family: 'Droid Serif', serif;
+    font-family: 'Open Sans', serif;
     font-size: 2.57rem;
     line-height: 2.57rem;
     color: #25282B;
@@ -59,10 +62,16 @@ p {
 .main-navigation ul.nav-menu, .main-navigation div.nav-menu > ul {
     border-bottom: .22rem solid #25282B;
     border-top: none;
+    margin-bottom: 10px;
 }
 
+.main-navigation li {
+    margin: 0 2rem 0 0;
+    font-size: 1.1rem;
+  
+}
 .main-navigation li a {
-    color: #7C7E81;
+    color: #555555;
     font-weight: bold;
 }
 
@@ -71,10 +80,17 @@ p {
 }
 
 /* blog entry */
+
+.archive-header, .page-header {    
+	margin-bottom: 1.5rem;
+    padding-bottom: 1.0rem;}
 .entry-header .entry-title {
-    font-family: 'Droid Serif', serif;
+/*
     font-size: 2.57rem;
     line-height: 2.85rem;
+*/
+    font-size: 2rem;
+    line-height: 2.35rem;
 }
 
 .entry-header .entry-title a {
@@ -86,8 +102,12 @@ p {
 }
 
 .site-content article{
-    margin-bottom: 2.14286rem;
-    border-bottom: .22rem solid #25282B;
+	float:left;
+	display:block;
+  	border-bottom:none;
+/*     margin-bottom: 2.14286rem; */
+    margin-bottom: 0;
+    padding-bottom: 0;    
 }
 
 footer.entry-meta{
@@ -96,9 +116,10 @@ footer.entry-meta{
 
 
 /* Pagination */
-/* Reference1: http://codex.wordpress.org/Function_Reference/paginate_links
-Reference2: http://www.codeproject.com/Articles/541717/wordpress-numbered-page-navigation-without-any-plu */
-.paging {position:relative; margin: 0 auto;display:block;text-align: center !important;}
+/* Reference1: http://www.codeproject.com/Articles/541717/wordpress-numbered-page-navigation-without-any-plu 
+Reference2: http://codex.wordpress.org/Function_Reference/paginate_links   */
+
+.paging {float:left;display:block;margin: 5px auto 10px;text-align: center !important;}
 .paging ul {
 	width:100%;
 	display:block;
@@ -106,7 +127,7 @@ Reference2: http://www.codeproject.com/Articles/541717/wordpress-numbered-page-n
 	text-align:center;
 }
 .paging ul li {
-text-align:center;
+	text-align:center;
     float:left;
     margin:0px 0px 2px 0px;
 }
@@ -141,10 +162,6 @@ text-align:center;
 
 
 /* widget */
-.widget-area {
-    padding-left: 2.14rem;
-}
-
 .widget-area #s{
     background: #F2F2F2;
     border-top: .072rem solid #A3A3A3;
@@ -165,8 +182,8 @@ text-align:center;
 }
 
 .widget-area .widget{
-    padding-bottom: 2.14rem;
-    margin-bottom: 2.14rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .widget-area .widget h3 {
@@ -206,23 +223,18 @@ text-align:center;
 .more-listings {
     position: relative;
     overflow: hidden;
-    margin: 0 0 30px 0;
+    margin: 0 0 20px 0;
 }
 .more-listings .block {
+    width: 270px;
+	height: 230px;
     background: url("images/bg-content-box.png") repeat-x scroll 0 0 #c4c1c4;
     border: 1px solid #e3e3e3;
-    margin: 20px;
-    padding: 15px;
-  
-}
-.more-listings .block {
-    float: left;
+    margin: 20px 10px 0;
     padding: 14px;
-    position: relative;
-    width: 250px;
-	 height: 250px;
+	display: block;
+    float: left;
 }
-
 .more-listings p {
     line-height: 22px;
     margin: 0 0 8px 6px;
@@ -247,9 +259,9 @@ text-align:center;
     text-transform: uppercase;
 }
 .more-listings span.more {
+/*
     background: url("images/ico-arrow.jpg") no-repeat scroll right center rgba(0, 0, 0, 0);
-	 bottom: 0;
-    position: absolute;
+*/
 }
 
 .more-listings span.more a {
@@ -260,18 +272,15 @@ text-align:center;
     padding-right: 10px;
 }
 
-
-
-.catheader{display: block;overflow: hidden;margin-bottom:20px;font-size: 16px;line-height: 18px;padding:20px 0 0;}
+.catheader{display: block;overflow: hidden;margin-bottom:20px;font-size: 16px;line-height: 18px;}
 .cattitle{float:left;}
 .catrss{float:right;}
 .catheader .archive-title {float:left;display: inline-block;clear:none;font-size: 16px;line-height: 18px;}
 
 #cat-search {
-    padding: 20px 20px;
+    padding: 10px 20px;
     overflow: hidden;
     border:1px solid #e3e3e3;
-    margin-bottom:30px;
     background: #e6e6e6 url(images/bg-content-box.png) repeat-x;
 }
 #cat-search ul li {
@@ -291,9 +300,7 @@ text-align:center;
     display: block;
     float: left;
     font: 16px sans-serif;
-    margin: 0 20px;
-    padding: 0 0 10px;
-    width: 940px;
+    width: 100%;
 }
 
 
@@ -306,10 +313,10 @@ text-align:center;
     border-style: solid;
     border-width: 1px 0;
     clear: both;
-    font-size: 12px;
-    margin: 8px 0 18px;
     overflow: hidden;
-    padding: 12px 0 2px;
+/*     font-size: 12px; */
+    margin: 0 0 10px;
+    padding: 10px 0 0;
 }
 #tribe-events-event-meta .column {
     float: left;
@@ -339,13 +346,27 @@ text-align:center;
 }
 
 
+.single-tribe_events .tribe-events-event-meta {
+    margin: 16px 0;
+    }
+.single-tribe_events .tribe-events-cal-links {float:right;}
+#tribe-events-content {
+    margin-bottom: 10px;
+}
+.tribe-events-single ul.tribe-related-events {margin-bottom:2%;}
+
+
+
 /* Contact Info Box */
 #tribe-contacts-event-meta {
-    border-bottom: 1px solid #bbb;
+    border-color: #bbb;
+    border-style: solid;
+    border-width: 0 0 1px;
+    clear: both;
+    overflow: hidden;
     float: left;
-    margin-bottom: 18px;
-    padding: 0 0 18px;
-    position: relative;
+    margin: 0 0 10px;
+    padding: 0 0 0;
     width: 100%;
 }
 #tribe-contacts-event-meta dt {
@@ -375,18 +396,34 @@ text-align:center;
 
 
 
-
-
-
-.widget-area .widget h3 {
-  margin-bottom:0;
+/* Footer */
+footer[role="contentinfo"] {
+    border-top: 1px solid #ededed;
+    clear: both;
+    font-size: 1rem;
+    line-height: 2;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    max-width: 68.5714rem;
+    padding: 1rem 0;
 }
-
+#footerwidgets .widget-title {
+    color: #5f6163;
+    font-weight: bold;
+    line-height: 2.18182;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: none;
+    margin-bottom: 10px;
+}
 #footerwidgets {
- width:100%;
+	width:100%;
+	overflow:hidden;
 }
 #footerwidgets p {
- padding-bottom: .5em;
+    margin-bottom: 5px;
+    padding-bottom: 0;
 }
 #footerwidgets span, #footerwidgets p  {
 /*
@@ -411,9 +448,10 @@ text-align:center;
 	float:right;
 	padding-left:2.5%;
 } 
-.site-content article {
-  border-bottom:none;
-}
+
+
+/* Remove Comments */
+.comments-area {display:none !important;}
 
 
 
@@ -465,26 +503,24 @@ hgroup {
     padding: 1.71429rem 0 0;
 }
 
-#x-able-message {
+#headcontent-right {
     clear: right;
     float: right;
     margin: 7px 0 0;
     background: #ffd400;
     padding:10px;
-    min-height: 110px;
     width:60%;
     background: #e6e6e6 url(images/bg-content-box.png) repeat-x;
     border: 1px solid #e3e3e3;
     font-family: Helvetica,Arial,sans-serif;
-    font-size: 1.2em;
+    font-size: 1em;
+/*
     line-height: 160%;
-    margin-bottom: 16px;
-    margin-right: 2px;
+*/
     overflow: hidden;
 }
 #subscribe-block {
     float: left;
-	padding:2%;
     width: 46%;
 }
 	#subscribe-block .rss, #subscribe-block #rss-links span {
@@ -510,11 +546,10 @@ hgroup {
 	    font-weight: bold;
 	    color:#000;
 	}
-	#subscribe-block span {font-size: 12px;margin-bottom:5px;}
+	#subscribe-block span {display:block;font-size: 12px;margin-bottom:5px;}
 
 .social-links {
-    float: left;
-    padding:2%;
+    float: right;
     width: 46%;
 }
 	.social-links li {
@@ -537,8 +572,9 @@ hgroup {
 	#sidebar .social-links li a {
 	    font-size: 1em;
 	}
-	#x-able-message .social-links li a strong {
+	#headcontent-right .social-links li a strong {
 	    display: block;
+	    font-size: 12px;
 	    line-height: 12px;
 	    margin-left: 35px;
 	    position: relative;
@@ -549,8 +585,7 @@ hgroup {
 	}
 	#subscribe-block .rss:hover, .social-links li a:hover {
 	    text-decoration: underline;
-	}
-	
+	}	
 	#subscribe-block a.rss em, .social-links li em {
 	    background: url(images/icon-event.png) no-repeat;
 	    display: block;
@@ -563,8 +598,9 @@ hgroup {
 		.social-links a.red {
 		    display: block;
 		    float: left;
-		    width: 210px;
+		    width: 200px;
 		    margin-bottom:12px;
+			line-height: 120%;
 		}
 		.social-links a.red .button{
 		    display: block;
@@ -593,23 +629,9 @@ hgroup {
 	.social-links li.flickr em {
 	    background-position: -26px -27px;
 	}
-
-/*
-	.social-links li.contribute em {
-	    background-position: -78px 0;
-	}
-*/
-
-
 	.social-links li.contribute em {
 	    background: url(images/icon-plus.png) no-repeat; 
 	}
-
-/*
-	.social-links li.news em {
-	    background-position: -52px 0;
-	}
-*/
 	.social-links li.news em {
 	    background: url(images/icon-event.png) no-repeat; 
 	}
@@ -627,6 +649,7 @@ hgroup {
     clear: right;
     overflow: hidden;
 }
+.headersearchlinks .subcaption{color:#BD1306; line-height: 20px; font-weight: bold;font-size: 13px;}
 h2.centerme, ul.centerme {text-align:center;}
 .headersearchlinks h2 {
     background: none repeat scroll 0 0 transparent;
@@ -635,7 +658,8 @@ h2.centerme, ul.centerme {text-align:center;}
     padding: 8px 0;
     text-transform: none;
 }
-.headersearchlinks .column ul li {margin-bottom: 10px;}
+.headersearchlinks .column ul li {font-size: 0.928571rem;
+    line-height: 1.84615;}
 .calendar-link {
     background: none repeat scroll 0 0 transparent;
     border: none;
@@ -644,10 +668,10 @@ h2.centerme, ul.centerme {text-align:center;}
 	text-align:center;
 }
 .calendar-link a.button, .calendar-link a.button:hover {
-    background: url("images/icon-calendar.png") no-repeat center center;
+    background: url("images/icon-calendar-70.png") no-repeat center center;
     border: medium none;
     box-shadow: none;
-    padding: 24px 24px;
+    padding: 35px 35px;
 }
 .headersearchlinks #searchform #s{width: 60%;border-radius: 3px;font-size: 1.2em;line-height:1.5rem;}
 .headersearchlinks #searchform #searchsubmit{border-radius: 3px;}
@@ -819,12 +843,12 @@ h2.centerme, ul.centerme {text-align:center;}
 
 
 .featuredpost-container {display: block;position: relative;width:100%;overflow:hidden;margin:20px 0;}
-	h2.heading {font-size:24px;color: #555;font-weight: bold;padding: 6px 0;}
-	.featuredpost {overflow: hidden;}
-		.featuredpost h2 {font-size:20px;float:left;}
+	h2.heading {font-size:24px;color: #555;font-weight: bold;padding: 6px 0;margin-bottom:10px;}
+	.featuredpost {overflow: hidden;margin-bottom:15px;}
+		.featuredpost h2 {font-size:16px;float:left;}
 		.featuredpost a {overflow: hidden;}
-		.featuredpost .featext {overflow: hidden;margin: 0.857143rem 0 0 0}
-		.featuredpost p {float:left;margin: 0 0 1.71429rem;}
+		.featuredpost .featext {overflow: hidden;margin: 0 0 0 0}
+		.featuredpost p {float:left;}
 		.posttitle {margin: 0 0 10px;overflow: hidden;}
 
 
@@ -899,6 +923,81 @@ a.button:hover, a.button.hover, a.button.active, a.comment-reply-link:hover, #co
 
 
 
+
+/*	%%%%%%%%%		CSS UPDATES REQUESTED BY CA	%%%%%%%%% */
+
+body .site {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.site-header {
+    padding: 0.6rem 0 0;
+}
+
+.site-content {
+    margin: 0;
+}
+
+/* widget css updates requested */
+.widget-area {margin: 0 0 0;}
+.widget-area .widget a {color: #21759b;}
+.widget-area .widget a:hover {color: #21759b;text-decoration:underline;}
+
+
+.widget-area .widget h3 {
+    color: #5f6163;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: none;
+    margin-bottom: 10px;;
+}
+
+/* tribe upcoming events widget */
+.tribe-events-widget-link {    
+	background-color: #555;
+    color: #ffffff !important;
+    font-weight: bold;
+    padding: 6px 20px;
+    text-align: center;
+}
+p.tribe-events-widget-link {margin-bottom:5px !important;}
+.tribe-events-widget-link a {font-weight: bold;color: #ffffff !important;}
+.tribe-events-widget-link a:hover {color: #ffffff !important;text-decoration: underline;}
+.tribe-events-adv-list-widget {
+	background: url("images/bg-content-box.png") repeat-x #e6e6e6;
+	border: 1px solid #e3e3e3;
+	padding: 10px;
+}
+.tribe-events-adv-list-widget ol li {
+    list-style: none outside none;
+    margin-bottom: 10px;
+}
+.tribe-events-adv-list-widget ol li a {font-weight: normal;}
+.tribe-events-adv-list-widget .duration {font-weight: normal;}
+
+
+.widget_links{
+	background: url("images/bg-content-box.png") repeat-x #e6e6e6;
+	border: 1px solid #e3e3e3;
+	padding: 10px;
+}
+.widget .blogroll li:last-child {padding-top: 10px;}
+.widget .blogroll li:last-child a {
+    background-color: #555;
+    color: #ffffff;
+    font-style: normal;
+    font-weight: bold;
+    margin-left: 70px;
+    padding: 6px 20px;
+}
+.widget .blogroll li:last-child a:hover {color: #ffffff !important;text-decoration: underline;}
+
+
+
+
+
+
 /*	%%%%%%%%%		PLUGIN STYLES & FIXES		%%%%%%%%% */
 
 /* The input fields become hidden for ACF Meta boxes. class acf-hidden gets added
@@ -911,5 +1010,16 @@ http://support.advancedcustomfields.com/forums/search/?bbp_search=acf-hidden */
 /* The ShareDaddy widget of Jetpack only has bottom of post option. We want to move to top.  */
 div.sharedaddy {margin-top:20px;border-top: 1px solid #bbb}
 div.sharedaddy h3.sd-title:before {border-top: none !important;}
+
+
+/* gTranslate plugin styling */
+#gtrans-container {
+	float: right;
+    padding-top: 3px;
+    max-width: 300px;
+}
+#gtrans-container br {
+    display: none;
+}
 
 

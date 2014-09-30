@@ -26,7 +26,7 @@ get_header(); ?>
 				 
 			// args
 			$args = array(
-				'numberposts' => 4,
+				'posts_per_page' => 4,
 				'post_type' => 'organization',   // seems only org is required, but still shows tribe_events post type
 				'tag' => 'featured'
 				//'meta_key' => 'frontpagepost',

@@ -9,6 +9,10 @@
 
 get_header(); ?>
 
+<?php // get # of search results found for later use
+	$array_counter = $wp_query->found_posts;
+?>
+
 	<section id="primary" class="site-content">
 		<div id="content" role="main">
 
@@ -16,16 +20,41 @@ get_header(); ?>
 
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentytwelve' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<span class="results_header"><?php echo "This search found " . $array_counter . " results."; ?></span>
 			</header>
 
-			<?php twentytwelve_content_nav( 'nav-above' ); ?>
+			<?php //twentytwelve_content_nav( 'nav-above' ); ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php get_template_part( 'content', get_post_format() ); ?>
 			<?php endwhile; ?>
 
-			<?php twentytwelve_content_nav( 'nav-below' ); ?>
+			<?php // twentytwelve_content_nav( 'nav-below' ); ?>
+			
+			<div class="paging">
+			    <?php
+			        global $wp_query;
+			        $big = 999999999; // need an unlikely integer
+			        $args = array(
+			            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			            'format' => '?page=%#%',
+			            'total' => $wp_query->max_num_pages,
+			            'current' => max( 1, get_query_var( 'paged') ),
+			            'show_all' => false,
+			            'end_size' => 3,
+			            'mid_size' => 2,
+			            'prev_next' => True,
+			            'prev_text' => __('&laquo; Previous'),
+			            'next_text' => __('Next &raquo;'),
+			            'type' => 'list',
+			            );
+			    ?>
+			    <?php echo paginate_links($args); ?>
+			</div>
+			<!-- // Paging End -->		
+
+
 
 		<?php else : ?>
 

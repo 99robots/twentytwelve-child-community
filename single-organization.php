@@ -16,14 +16,13 @@ get_header(); ?>
 
 				<header class="entry-header">
 					<h1 class="entry-title"><?php the_title(); ?></h1>
-		
-					<?php 
-					if ( function_exists( 'sharing_display' ) ) {
-					    echo sharing_display();
-					}
-					?>		
 				</header>
 
+				<!-- Get the sharing panek (jetpack Sharing) -->
+				<?php if ( function_exists( 'sharing_display' ) ) {
+				    echo sharing_display();
+				} ?>	
+					
 				<div class="entry-content">
 					<!-- GET THE CUSTOM FIELDS FOR ORGANIZATION -->
 					<div id="tribe-events-event-meta">
@@ -141,9 +140,11 @@ get_header(); ?>
 					<?php /* get_template_part( 'content', get_post_format() );  */?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<header class="entry-header">
-							<?php the_post_thumbnail(); ?>
-						</header>
+						<?php if ( has_post_thumbnail() ) { ?>
+							<header class="entry-header">
+								<?php the_post_thumbnail(); ?>
+							</header>
+						<?php } ?>					
 						<p><strong>Description:</strong></p>
 						<div class="entry-content">
 							<?php remove_filter( 'the_content', 'sharing_display',19 ); the_content(); ?>

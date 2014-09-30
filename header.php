@@ -32,14 +32,22 @@
 </head>
 
 <body <?php body_class(); ?>>
+
 <div id="page" class="hfeed site">
+
+<div id="gtrans-container">
+	<?php echo do_shortcode('[gtrans]'); ?>
+</div>
+
 
 	<header id="masthead" class="site-header" role="banner">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img class="logo" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/logo-CA-2-300x120.png"></a>
+<!--
 		<hgroup>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</hgroup>
+-->
 
 		<?php get_template_part( 'content', 'header-signup' ); ?>
 
@@ -55,8 +63,12 @@
 	</header><!-- #masthead -->
 
 	
-	<!-- get the search and links section -->		
-	<?php get_template_part( 'content', 'header-searchlinks' ); ?>
+	<!-- get the search and links section -->
+	<?php if ( is_singular( array( 'tribe_events', 'tribe_venue' ) ) ) {
+		//do nothing
+	} else {
+		get_template_part( 'content', 'header-searchlinks' );
+	} ?>
 
 	<div id="main" class="wrapper">
 	

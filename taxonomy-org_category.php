@@ -47,6 +47,8 @@ get_header(); ?>
             <span class="catheader">
             	<span class="fl cattitle"><h1 class="archive-title">Organizations | <?php echo $taxonomy_term_nice_name;?></h1></span>
             	<span class="fr catrss"><a href="<?php echo get_term_feed_link( $term_id, $taxonomy_short_name, ''); ?>"><?php _e("RSS feed for this section", "woothemes"); ?></a></span>
+            	<span class="results">Found <?php echo $taxonomy_archive_query_obj->count; ?> results.</span>
+
             </span>
 
 			<!-- %%	Display Child Categories on Parent Taxonomy Archive Page  (i.e., org_category)
@@ -99,7 +101,7 @@ get_header(); ?>
 				<div class="block">                                
 	                <h2 class="cufon"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>       		
 	        		<p><?php the_excerpt(); ?></p>        		
-	        		<span class="more"><a href="<?php the_permalink(); ?>">More Info</a></span>       	
+	        		<span class="more"><a href="<?php the_permalink(); ?>">More Info &rarr;</a></span>       	
 	            </div>
 
 			<?php endwhile; ?>
@@ -112,8 +114,9 @@ get_header(); ?>
 
 
 	<!-- Paging Start -->
-	<!-- Reference: http://codex.wordpress.org/Function_Reference/paginate_links
-	http://www.codeproject.com/Articles/541717/wordpress-numbered-page-navigation-without-any-plu  -->
+	<!-- Reference1: http://www.codeproject.com/Articles/541717/wordpress-numbered-page-navigation-without-any-plu 
+		Reference2: http://codex.wordpress.org/Function_Reference/paginate_links -->
+		
 	<div class="paging">
 	    <?php
 	        global $wp_query;
