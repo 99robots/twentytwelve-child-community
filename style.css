@@ -1,6 +1,6 @@
 /*
 Theme Name: Community Answers
-Description: Community Answers is a Child Theme of Twenty Twelve Theme 
+Description: Community Answers is a Child Theme of Twenty Twelve Theme
 Theme URI: http://www.communityanswers.org/
 Author: Community Answers
 Author URI: http://www.communityanswers.org/
@@ -68,7 +68,7 @@ p {
 .main-navigation li {
     margin: 0 2rem 0 0;
     font-size: 1.1rem;
-  
+
 }
 .main-navigation li a {
     color: #555555;
@@ -81,7 +81,7 @@ p {
 
 /* blog entry */
 
-.archive-header, .page-header {    
+.archive-header, .page-header {
 	margin-bottom: 1.5rem;
     padding-bottom: 1.0rem;}
 .entry-header .entry-title {
@@ -107,7 +107,7 @@ p {
   	border-bottom:none;
 /*     margin-bottom: 2.14286rem; */
     margin-bottom: 0;
-    padding-bottom: 0;    
+    padding-bottom: 0;
 }
 
 footer.entry-meta{
@@ -116,7 +116,7 @@ footer.entry-meta{
 
 
 /* Pagination */
-/* Reference1: http://www.codeproject.com/Articles/541717/wordpress-numbered-page-navigation-without-any-plu 
+/* Reference1: http://www.codeproject.com/Articles/541717/wordpress-numbered-page-navigation-without-any-plu
 Reference2: http://codex.wordpress.org/Function_Reference/paginate_links   */
 
 .paging {float:left;display:block;margin: 5px auto 10px;text-align: center !important;}
@@ -286,7 +286,7 @@ Reference2: http://codex.wordpress.org/Function_Reference/paginate_links   */
 #cat-search ul li {
     float: left;
     width: 200px;
-    margin-right: 20px;    
+    margin-right: 20px;
     margin-bottom: 10px;
     font-size: 90%;
 }
@@ -447,7 +447,7 @@ footer[role="contentinfo"] {
 	width:30%;
 	float:right;
 	padding-left:2.5%;
-} 
+}
 
 
 /* Remove Comments */
@@ -476,7 +476,7 @@ and (max-width:481px) {
 
 footer .main-navigation ul.nav-menu, footer .main-navigation div.nav-menu > ul {
     border-top: 0.22rem solid #25282b;
-   
+
 }
 
 body{
@@ -585,7 +585,7 @@ hgroup {
 	}
 	#subscribe-block .rss:hover, .social-links li a:hover {
 	    text-decoration: underline;
-	}	
+	}
 	#subscribe-block a.rss em, .social-links li em {
 	    background: url(images/icon-event.png) no-repeat;
 	    display: block;
@@ -606,7 +606,7 @@ hgroup {
 		    display: block;
 		    float: left;
 		    width: 210px;
-		}	
+		}
 	#subscribe-block a.rss em {
 	    height: 15px;
 	    width: 15px;
@@ -630,10 +630,10 @@ hgroup {
 	    background-position: -26px -27px;
 	}
 	.social-links li.contribute em {
-	    background: url(images/icon-plus.png) no-repeat; 
+	    background: url(images/icon-plus.png) no-repeat;
 	}
 	.social-links li.news em {
-	    background: url(images/icon-event.png) no-repeat; 
+	    background: url(images/icon-event.png) no-repeat;
 	}
 	.social-links li.vimeo em {
 	    background-position: 0 -27px;
@@ -778,7 +778,7 @@ h2.centerme, ul.centerme {text-align:center;}
     margin: 0 0 20px 0;
     overflow: hidden;
     color: #BD1306;
-	line-height: 20px; 
+	line-height: 20px;
 	font-weight: bold;
 	font-size: 13px;
 }
@@ -954,7 +954,7 @@ body .site {
 }
 
 /* tribe upcoming events widget */
-.tribe-events-widget-link {    
+.tribe-events-widget-link {
 	background-color: #555;
     color: #ffffff !important;
     font-weight: bold;
@@ -993,7 +993,9 @@ p.tribe-events-widget-link {margin-bottom:5px !important;}
 }
 .widget .blogroll li:last-child a:hover {color: #ffffff !important;text-decoration: underline;}
 
-
+.column .blogroll {
+	text-align: center !important;
+}
 
 
 

@@ -42,7 +42,6 @@ register_sidebar(array(
 'after_title' => '</h3>'
 ));
 
-
 // 1. Remove the Organizer Dropdown that shows up inside the Edit Events screen.
 
 remove_action( 'tribe_organizer_table_top', array('TribeEventsPro', 'displayEventOrganizerDropdown'),100 );
@@ -257,3 +256,16 @@ function new_excerpt_more( $more ) {
 	return '[.....]';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+// 9 Addd Widget area to top header for quick links
+
+if ( function_exists('register_sidebar') ) {
+	register_sidebar(array(
+		'name' 				=> 'Content Header',
+		'id' 				=> 'content-header',
+		'before_widget' 	=> '',
+		'after_widget' 		=> '',
+		'before_title' 		=> '<h2 class="centerme">',
+		'after_title' 		=> '</h2>'
+	));
+}

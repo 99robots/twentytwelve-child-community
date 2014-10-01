@@ -8,15 +8,23 @@
 		</span>
 	</div> <!-- /column -->
 
-	<div class="column">
+	<!--
+<div class="column">
 		<h2 class="centerme">Quick Links</h2>
-		<ul class="centerme">	
+		<ul class="centerme">
 			<li><a title="Know Your Town Cards &ndash; English/Spanish" href="/know-your-town-cards/">Know Your Town Cards &ndash; KYT Cards</a></li>
 			<li><a href="/town-of-greenwich-park-pass-office/">Beach, Tennis and Golf Cards</a></li>
 			<li><a target="_blank" href="/tutors-notebook/">List of Tutors by Subject</a></li>
-		</ul>     
-	</div> <!-- /column -->
-	
+		</ul>
+	</div>--> <!-- /column -->
+
+
+	<?php if ( is_active_sidebar( 'content-header' ) ) : ?>
+		<div class="column">
+			<?php dynamic_sidebar( 'content-header' ); ?>
+		</div> <!-- /column -->
+	<?php endif; ?>
+
 	<div class="column">
 		<h2 class="centerme">Greenwich</h2>
 		<div class="calendar-link">
@@ -25,6 +33,6 @@
 				<h2 class="cufond">Calendar</h2>
 			</div>
 		</div>
-	</div> <!-- /column -->		
+	</div> <!-- /column -->
 
 </div>  <!-- /headersearchlinks -->
