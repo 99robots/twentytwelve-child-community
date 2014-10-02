@@ -997,7 +997,9 @@ p.tribe-events-widget-link {margin-bottom:5px !important;}
 	text-align: center !important;
 }
 
-
+.column dd {
+	word-wrap: break-word;
+}
 
 
 /*	%%%%%%%%%		PLUGIN STYLES & FIXES		%%%%%%%%% */
@@ -1023,5 +1025,3 @@ div.sharedaddy h3.sd-title:before {border-top: none !important;}
 #gtrans-container br {
     display: none;
 }
-
-
