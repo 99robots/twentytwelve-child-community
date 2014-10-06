@@ -26,11 +26,11 @@ get_header(); ?>
 
 			// args
 			$args = array(
-				'posts_per_page' => 4,
-				'post_type' => 'organization',   // seems only org is required, but still shows tribe_events post type
-				'tag' => 'featured'
-				//'meta_key' => 'frontpagepost',
-				//'meta_value' => '1'
+				'posts_per_page' 	=> 4,
+				'post_type' 		=> 'organization',   // seems only org is required, but still shows tribe_events post type
+				'tag' 				=> 'featured'
+				//'meta_key' 		=> 'frontpagepost',
+				//'meta_value' 		=> '1'
 			);
 
 		// get results

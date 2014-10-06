@@ -32,7 +32,7 @@ if ( $not_skeleton ) echo '<div class="tribe-events-single-section tribe-events-
 		tribe_get_template_part( 'modules/meta/venue' );
 
 	// If we have no organizer, no need to separate the venue but we have a map to embed...
-	elseif ( ! $set_venue_apart && ! tribe_has_organizer() && tribe_address_exists() && tribe_embed_google_map() ) {
+	else if ( ! $set_venue_apart && ! tribe_has_organizer() && tribe_address_exists() && tribe_embed_google_map() ) {
 		tribe_get_template_part( 'modules/meta/venue' );
 		echo '<div class="tribe-events-meta-group tribe-events-meta-group-gmap">';
 		tribe_get_template_part( 'modules/meta/map' );
@@ -43,8 +43,8 @@ if ( $not_skeleton ) echo '<div class="tribe-events-single-section tribe-events-
 	else $set_venue_apart = true;
 
 	// Include organizer meta if appropriate
-	
-	// STRATIQ - commented out the organizer info of ECP because we turn this off inside ECP. 
+
+	// STRATIQ - commented out the organizer info of ECP because we turn this off inside ECP.
 	//if ( tribe_has_organizer() ) tribe_get_template_part( 'modules/meta/organizer' );
 
 	// STRATIQ - adding our custom fields from ACF that CA is using. This information is inside theme /tribe-events/modules/meta/contactinfo.php
