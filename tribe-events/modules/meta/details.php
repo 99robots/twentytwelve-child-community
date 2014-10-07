@@ -89,6 +89,11 @@
 
 		<?php endif ?>
 
+		<dt class="event-label event-label-schedule"><?php _e('Schedule:', 'tribe-events-calendar'); ?></dt>
+		<dd class="event-meta event-meta-schedule"><?php echo tribe_get_recurrence_text(); ?>
+			<?php if( class_exists('TribeEventsRecurrenceMeta') && function_exists('tribe_all_occurences_link')): ?>(<a href='<?php tribe_all_occurences_link(); ?>'>See all</a>)<?php endif; ?>
+		</dd>
+
 		<?php
 		$cost = tribe_get_formatted_cost();
 		if ( ! empty( $cost ) ):
