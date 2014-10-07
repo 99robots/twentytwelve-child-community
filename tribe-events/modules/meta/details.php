@@ -42,7 +42,6 @@
 			<dd>
 				<abbr class="tribe-events-abbr dtend" title="<?php esc_attr_e( $end_ts ) ?>"> <?php esc_html_e( $end_date ) ?> </abbr>
 			</dd>
-
 		<?php
 		// All day (single day) events
 		elseif ( tribe_event_is_all_day() ):
@@ -67,7 +66,6 @@
 			<dd>
 				<abbr class="tribe-events-abbr dtend" title="<?php esc_attr_e( $end_ts ) ?>"> <?php esc_html_e( $end_datetime ) ?> </abbr>
 			</dd>
-
 		<?php
 		// Single day events
 		else :
@@ -89,10 +87,12 @@
 
 		<?php endif ?>
 
-		<dt class="event-label event-label-schedule"><?php _e('Schedule:', 'tribe-events-calendar'); ?></dt>
-		<dd class="event-meta event-meta-schedule"><?php echo tribe_get_recurrence_text(); ?>
-			<?php if( class_exists('TribeEventsRecurrenceMeta') && function_exists('tribe_all_occurences_link')): ?>(<a href='<?php tribe_all_occurences_link(); ?>'>See all</a>)<?php endif; ?>
-		</dd>
+		<?php if ( class_exists('TribeEventsRecurrenceMeta') && function_exists('tribe_get_recurrence_text') && tribe_is_recurring_event() ) : ?>
+			<dt class="event-label event-label-schedule"><?php _e('Schedule:', 'tribe-events-calendar'); ?></dt>
+			<dd class="event-meta event-meta-schedule"><?php echo tribe_get_recurrence_text(); ?>
+            	<?php if( class_exists('TribeEventsRecurrenceMeta') && function_exists('tribe_all_occurences_link')): ?>(<a href='<?php tribe_all_occurences_link(); ?>'>See all</a>)<?php endif; ?>
+			</dd>
+		<?php endif; ?>
 
 		<?php
 		$cost = tribe_get_formatted_cost();

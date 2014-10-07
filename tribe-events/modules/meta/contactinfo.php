@@ -37,7 +37,7 @@
 			<dt><?php _e('Sponsors:', 'tribe-events-calendar') ?></dt>
 			<?php if (get_field('registered_sponsors')) : ?>
 				<?php $sponsors = explode(",", get_field('registered_sponsors')); ?>
-				<?php foreach($sponsors as $sponsor): 
+				<?php foreach($sponsors as $sponsor):
 					$post_object = get_post($sponsor); ?>
 		    		<dd><a href="<?php echo get_permalink($post_object->ID); ?>"><?php echo get_the_title($post_object->ID) ?></a></dd>
 				<?php endforeach; ?>
