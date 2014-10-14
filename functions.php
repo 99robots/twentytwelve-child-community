@@ -257,7 +257,7 @@ function new_excerpt_more( $more ) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
-// 9 Addd Widget area to top header for quick links
+// 9 Add Widget area to top header for quick links
 
 if ( function_exists('register_sidebar') ) {
 	register_sidebar(array(
@@ -269,3 +269,29 @@ if ( function_exists('register_sidebar') ) {
 		'after_title' 		=> '</h2>'
 	));
 }
+
+// 10 Add Share print feature to top of events month view
+
+function siq_add_share_print_month_view() {
+
+	wp_enqueue_script( 'sharing-js-fe', WP_SHARING_PLUGIN_URL . 'sharing.js', array( ), 3 );
+
+	?>
+	<div class="sharedaddy sd-sharing-enabled">
+		<div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing">
+			<h3 class="sd-title"><?php _e('Share this:'); ?></h3>
+			<div class="sd-content">
+				<ul>
+					<li class="share-print">
+						<a rel="nofollow" class="share-print sd-button share-icon" href="<?php echo rtrim(the_permalink(), '/'); ?>#print" title="Click to print">
+							<span><?php _e('Print'); ?></span>
+							</a>
+							</li>
+					<li class="share-end"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<?php
+}
+add_action('tribe_events_before_the_title', 'siq_add_share_print_month_view');
