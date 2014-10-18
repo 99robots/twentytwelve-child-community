@@ -242,8 +242,8 @@ function siq_custom_search($hits) {
 // 7 Show all tag archives
 
 function siq_tag_archives( $query ) {
-    if ( $query->is_tag() && $query->is_main_query() ) {
-        $query->set( 'post_type', array( 'organization' ) );
+    if (!is_admin() && $query->is_tag() && $query->is_main_query() ) {
+        $query->set( 'post_type', array( 'tribe_events', 'organization' ) );
     }
 }
 add_action( 'pre_get_posts', 'siq_tag_archives' );
