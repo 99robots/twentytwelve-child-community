@@ -936,17 +936,27 @@ a.button:hover, a.button.hover, a.button.active, a.comment-reply-link:hover, #co
 
 /*	%%%%%%%%%		CSS UPDATES REQUESTED BY CA	%%%%%%%%% */
 
+@media only screen and (max-width: 720px) {
+
+	#headcontent-right {
+		display: inline-block;
+		width: 100%;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	.site-content {
+		display: inline-block;
+	}
+}
+
 body .site {
     margin-bottom: 0;
     margin-top: 0;
 }
 .site-header {
     padding: 0.6rem 0 0;
-}
-
-.site-content {
-    margin: 0;
-    width: 700px;
 }
 
 /* widget css updates requested */

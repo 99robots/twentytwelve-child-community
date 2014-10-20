@@ -50,7 +50,7 @@
     	?></span></a></h2>
 	</div><!-- /.block -->
 
-	<!-- <div class="fix"></div> -->
+	<div class="fix"></div>
 
 	<div class="block">
 	    <a href="/org_category/family-services/">
@@ -88,7 +88,7 @@
     	?></span></a></h2>
 	</div><!-- /.block -->
 
-	<!-- <div class="fix"></div> -->
+	<div class="fix"></div>
 
 	<div class="block">
 	    <a href="/org_category/know-your-town/">
@@ -125,8 +125,6 @@
 
     	?></span></a></h2>
 	</div><!-- /.block -->
-
-	<div class="fix"></div>
 
 	<div class="fix"></div>
 </div>  <!-- /category-listings -->
